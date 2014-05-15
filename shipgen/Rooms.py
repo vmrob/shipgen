@@ -88,7 +88,7 @@ def init():
 	if (initialized):
 		return
 	Parts.init()
-	configPath = os.path.join(os.path.dirname(__file__), "data", "rooms.cfg")
+	configPath = os.path.join(shipgenDir, "data", "rooms.cfg")
 	configDict = ConfigFile.readFile(configPath)
 	rooms[EXTERIOR] = Room(EXTERIOR_CONFIG)
 	for roomName in configDict.keys():

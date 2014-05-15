@@ -67,7 +67,7 @@ def init():
 		return
 	for size in SIZES:
 		parts[size] = {}
-		configPath = os.path.join(os.path.dirname(__file__), "data", "parts_%s.cfg" % TYPE_ABBRS[size])
+		configPath = os.path.join(shipgenDir, "data", "parts_%s.cfg" % TYPE_ABBRS[size])
 		configDict = ConfigFile.readFile(configPath)
 		allReactors = []
 		allThrusters = []

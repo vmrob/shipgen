@@ -2,6 +2,7 @@ import os.path
 import random
 
 import ConfigFile
+import Constants
 
 initialized = False
 dists = {}
@@ -29,7 +30,7 @@ def init():
 	global initialized
 	if (initialized):
 		return
-	configPath = os.path.join(os.path.dirname(__file__), "data", "dists.cfg")
+	configPath = os.path.join(Constants.shipgenDir, "data", "dists.cfg")
 	configDict = ConfigFile.readFile(configPath)
 	for distName in configDict.keys():
 		if (type(configDict[distName]) != type("")):

@@ -1,3 +1,5 @@
+import os
+
 TYPE_SM = "Small Ship"
 TYPE_LG = "Large Ship"
 TYPE_ST = "Station"
@@ -22,3 +24,5 @@ PART_MIN = 'min'
 PART_MAX = 'max'
 ROOM_MIN = 'min'
 ROOM_MAX = 'max'
+
+shipgenDir = os.path.dirname(os.path.realpath(__file__))
