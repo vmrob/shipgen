@@ -33,7 +33,6 @@ DEFAULTS = {
 	TURN:		{TURN_MIN: 1, TURN_MAX: 5},
 }
 
-initialized = False
 classes = {}
 
 
@@ -317,15 +316,10 @@ class ShipClass:
 
 
 def init():
-	global initialized
-	if (initialized):
-		return
-	Dists.init()
-	Parts.init()
-	Rooms.init()
 	for (shipType, typeAbbr) in TYPE_ABBRS.items():
 		classes[shipType] = {}
 		classDict = ConfigFile.read_config("classes_%s.json" % typeAbbr)
 		for k in classDict.keys():
 			classes[shipType][k] = ShipClass(shipType, classDict[k])
-	initialized = True
+
+init()

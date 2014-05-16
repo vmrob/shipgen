@@ -11,7 +11,6 @@ ACCESS = 'access'
 ROOMS = 'rooms'
 
 
-initialized = False
 parts = {}
 
 
@@ -38,12 +37,10 @@ class Part:
 
 
 def init():
-	global initialized
-	if (initialized):
-		return
 	for size in SIZES:
 		parts[size] = {}
 		configDict = ConfigFile.read_config("parts_%s.json" % TYPE_ABBRS[size])
 		for partName in configDict.keys():
 			parts[size][partName] = Part(configDict[partName])
-	initialized = True
+
+init()

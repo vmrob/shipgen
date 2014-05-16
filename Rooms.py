@@ -25,7 +25,6 @@ EXTERIOR_CONFIG = {
 }
 
 
-initialized = False
 rooms = {}
 
 
@@ -82,12 +81,9 @@ class Room:
 
 
 def init():
-	global initialized
-	if (initialized):
-		return
-	Parts.init()
 	configDict = ConfigFile.read_config("rooms.json")
 	rooms[EXTERIOR] = Room(EXTERIOR_CONFIG)
 	for roomName in configDict.keys():
 		rooms[roomName] = Room(configDict)
-	initialized = True
+
+init()

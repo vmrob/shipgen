@@ -2,7 +2,6 @@ import random
 
 import ConfigFile
 
-initialized = False
 dists = {}
 
 
@@ -25,13 +24,12 @@ class Distribution:
 
 
 def init():
-	global initialized
-	if (initialized):
-		return
 	configDict = ConfigFile.read_config("dists.json")
 	for distName in configDict.keys():
 		probs = [float(x) for x in configDict[distName].split() if x]
 		if (not probs):
 			continue
 		dists[distName] = Distribution(probs)
-	initialized = True
+
+
+init()
