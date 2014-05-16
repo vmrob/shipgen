@@ -1,5 +1,3 @@
-import os.path
-
 import ConfigFile
 
 from Constants import *
@@ -45,8 +43,7 @@ def init():
 		return
 	for size in SIZES:
 		parts[size] = {}
-		configPath = os.path.join(os.path.dirname(__file__), "data", "parts_%s.cfg" % TYPE_ABBRS[size])
-		configDict = ConfigFile.readFile(configPath)
+		configDict = ConfigFile.read_config("parts_%s.json" % TYPE_ABBRS[size])
 		for partName in configDict.keys():
 			if (type(configDict[partName]) != type({})):
 				continue

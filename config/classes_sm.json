@@ -1,0 +1,31 @@
+# small ship classes
+
+{
+    "Light Explorer" : {
+        "materials" : {
+            "Light Armor" : ".5",
+            "Heavy Armor" : ".5"
+        },
+        "enclosure" : {
+            "platform" : "0",
+            "none"     : ".9",
+            "full"     : "0",
+            "sealed"   : ".1"
+        },
+        "symmetry"    : {
+            "none"    : ".1",
+            "full"    : ".8",
+            "partial" : ".1"
+        },
+        "accel" : "1 10 .5 .5",
+        "turn"  : "5 10",
+        "parts" : {
+            "Gatling Gun"     : "Rare 0 2",
+            "Ore Detector"    : "Rare 0 1",
+            "Rocket Launcher" : "Rare 0 2",
+            "Cockpit"         : "One",
+            "Beacon"          : "Secondary 0 1",
+            "Spotlight"       : "Tertiary 0 2"
+        }
+    }
+}

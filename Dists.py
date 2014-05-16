@@ -1,4 +1,3 @@
-import os.path
 import random
 
 import ConfigFile
@@ -29,8 +28,7 @@ def init():
 	global initialized
 	if (initialized):
 		return
-	configPath = os.path.join(os.path.dirname(__file__), "data", "dists.cfg")
-	configDict = ConfigFile.readFile(configPath)
+	configDict = ConfigFile.read_config("dists.json")
 	for distName in configDict.keys():
 		if (type(configDict[distName]) != type("")):
 			continue

@@ -1,0 +1,13 @@
+# probability distributions
+
+# distribution name: P(n>=1|n>=0) P(n>=2|n>=1) P(n>=3|n>=2) ...
+
+{
+    "Mandatory" : "1 .05 .01",
+    "Redundant" : "1 1 .05",
+    "Primary"   : "1 1 .5",
+    "Secondary" : ".5",
+    "Tertiary"  : ".1",
+    "Rare"      : ".01",
+    "One"       : "1 0"
+}

@@ -1,5 +1,3 @@
-import os.path
-
 import ConfigFile
 import Parts
 
@@ -88,8 +86,7 @@ def init():
 	if (initialized):
 		return
 	Parts.init()
-	configPath = os.path.join(os.path.dirname(__file__), "data", "rooms.cfg")
-	configDict = ConfigFile.readFile(configPath)
+	configDict = ConfigFile.read_config("rooms.json")
 	rooms[EXTERIOR] = Room(EXTERIOR_CONFIG)
 	for roomName in configDict.keys():
 		if (type(configDict[roomName]) != type({})):
