@@ -521,8 +521,7 @@ def init():
 	Rooms.init()
 	for (shipType, typeAbbr) in TYPE_ABBRS.items():
 		classes[shipType] = {}
-		configPath = os.path.join(os.path.dirname(__file__), "data", "classes_%s.cfg" % typeAbbr)
-		configDict = ConfigFile.readFile(configPath)
+		configDict = ConfigFile.read_config("classes_%s.json" % typeAbbr)
 		for className in configDict.keys():
 			if (type(configDict[className]) != type({})):
 				continue

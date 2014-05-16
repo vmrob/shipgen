@@ -1,4 +1,3 @@
-import os.path
 import random
 
 import Classes
@@ -54,8 +53,7 @@ def init():
 	if (initialized):
 		return
 	Classes.init()
-	configPath = os.path.join(os.path.dirname(__file__), "data", "profiles.cfg")
-	configDict = ConfigFile.readFile(configPath)
+	configDict = ConfigFile.read_config("profiles.json")
 	for profName in configDict.keys():
 		if (type(configDict[profName]) != type({})):
 			continue
