@@ -55,8 +55,6 @@ def init():
 	Classes.init()
 	configDict = ConfigFile.read_config("profiles.json")
 	for profName in configDict.keys():
-		if (type(configDict[profName]) != type({})):
-			continue
 		profiles[profName] = Profile(configDict[profName])
 	initialized = True
 

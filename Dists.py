@@ -30,8 +30,6 @@ def init():
 		return
 	configDict = ConfigFile.read_config("dists.json")
 	for distName in configDict.keys():
-		if (type(configDict[distName]) != type("")):
-			continue
 		probs = [float(x) for x in configDict[distName].split() if x]
 		if (not probs):
 			continue

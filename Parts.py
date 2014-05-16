@@ -45,7 +45,5 @@ def init():
 		parts[size] = {}
 		configDict = ConfigFile.read_config("parts_%s.json" % TYPE_ABBRS[size])
 		for partName in configDict.keys():
-			if (type(configDict[partName]) != type({})):
-				continue
 			parts[size][partName] = Part(configDict[partName])
 	initialized = True
