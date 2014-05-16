@@ -42,8 +42,6 @@ COMPROMISE_THRESHOLD = 3
 COMPROMISE_FACTOR = .9
 COMPROMISE_POWER = {POWER_MAX: POWER_HIGH, POWER_HIGH: POWER_STD, POWER_STD: POWER_MIN}
 
-
-initialized = False
 classes = {}
 
 
@@ -513,12 +511,6 @@ class ShipClass:
 
 
 def init():
-	global initialized
-	if (initialized):
-		return
-	Dists.init()
-	Parts.init()
-	Rooms.init()
 	for (shipType, typeAbbr) in TYPE_ABBRS.items():
 		classes[shipType] = {}
 		configPath = os.path.join(os.path.dirname(__file__), "data", "classes_%s.cfg" % typeAbbr)
@@ -527,4 +519,5 @@ def init():
 			if (type(configDict[className]) != type({})):
 				continue
 			classes[shipType][className] = ShipClass(shipType, configDict[className])
-	initialized = True
+
+init()

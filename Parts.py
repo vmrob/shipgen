@@ -17,7 +17,6 @@ ROOMS = 'rooms'
 PRIORITIZATION_MASS_FACTOR = .5
 
 
-initialized = False
 parts = {}
 reactors = {}
 thrusters = {}
@@ -62,9 +61,6 @@ def prioritizeByEfficiency(l):
 	return retval
 
 def init():
-	global initialized
-	if (initialized):
-		return
 	for size in SIZES:
 		parts[size] = {}
 		configPath = os.path.join(os.path.dirname(__file__), "data", "parts_%s.cfg" % TYPE_ABBRS[size])
@@ -86,4 +82,5 @@ def init():
 		reactors[size] = prioritizeByEfficiency(allReactors)
 		thrusters[size] = prioritizeByEfficiency(allThrusters)
 		gyros[size] = prioritizeByEfficiency(allGyros)
-	initialized = True
+
+init()

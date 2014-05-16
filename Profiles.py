@@ -7,7 +7,6 @@ import Util
 
 from Constants import *
 
-initialized = False
 profiles = {}
 
 class Profile:
@@ -50,20 +49,18 @@ class Profile:
 
 
 def init():
-	global initialized
-	if (initialized):
-		return
-	Classes.init()
 	configPath = os.path.join(os.path.dirname(__file__), "data", "profiles.cfg")
 	configDict = ConfigFile.readFile(configPath)
 	for profName in configDict.keys():
 		if (type(configDict[profName]) != type({})):
 			continue
 		profiles[profName] = Profile(configDict[profName])
-	initialized = True
+
+
+init()
+
 
 def generateShip(profile=None):
-	init()
 	if (profile is None):
 		profile = random.choice(profiles.keys())
 	if (profile not in profiles):

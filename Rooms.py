@@ -27,7 +27,6 @@ EXTERIOR_CONFIG = {
 }
 
 
-initialized = False
 rooms = {}
 
 
@@ -84,10 +83,6 @@ class Room:
 
 
 def init():
-	global initialized
-	if (initialized):
-		return
-	Parts.init()
 	configPath = os.path.join(os.path.dirname(__file__), "data", "rooms.cfg")
 	configDict = ConfigFile.readFile(configPath)
 	rooms[EXTERIOR] = Room(EXTERIOR_CONFIG)
@@ -95,4 +90,5 @@ def init():
 		if (type(configDict[roomName]) != type({})):
 			continue
 		rooms[roomName] = Room(configDict)
-	initialized = True
+
+init()

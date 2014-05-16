@@ -3,7 +3,6 @@ import random
 
 import ConfigFile
 
-initialized = False
 dists = {}
 
 
@@ -26,9 +25,6 @@ class Distribution:
 
 
 def init():
-	global initialized
-	if (initialized):
-		return
 	configPath = os.path.join(os.path.dirname(__file__), "data", "dists.cfg")
 	configDict = ConfigFile.readFile(configPath)
 	for distName in configDict.keys():
@@ -38,4 +34,6 @@ def init():
 		if (not probs):
 			continue
 		dists[distName] = Distribution(probs)
-	initialized = True
+
+
+init()
