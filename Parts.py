@@ -70,8 +70,6 @@ def init():
 		allGyros = []
 		configDict = ConfigFile.read_config("parts_%s.json" % TYPE_ABBRS[size])
 		for partName in configDict.keys():
-			if (type(configDict[partName]) != type({})):
-				continue
 			parts[size][partName] = Part(configDict[partName])
 			if (parts[size][partName].mass != 0):
 				if (parts[size][partName].power < 0):

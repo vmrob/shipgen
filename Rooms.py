@@ -89,7 +89,5 @@ def init():
 	configDict = ConfigFile.read_config("rooms.json")
 	rooms[EXTERIOR] = Room(EXTERIOR_CONFIG)
 	for roomName in configDict.keys():
-		if (type(configDict[roomName]) != type({})):
-			continue
 		rooms[roomName] = Room(configDict)
 	initialized = True

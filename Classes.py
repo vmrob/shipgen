@@ -523,7 +523,5 @@ def init():
 		classes[shipType] = {}
 		configDict = ConfigFile.read_config("classes_%s.json" % typeAbbr)
 		for className in configDict.keys():
-			if (type(configDict[className]) != type({})):
-				continue
 			classes[shipType][className] = ShipClass(shipType, configDict[className])
 	initialized = True
