@@ -3,19 +3,19 @@
 {
     "Light Explorer" : {
         "materials" : {
-            "Light Armor" : ".5",
-            "Heavy Armor" : ".5"
+            "Light Armor" : 0.5,
+            "Heavy Armor" : 0.5
         },
         "enclosure" : {
-            "platform" : "0",
-            "none"     : ".9",
-            "full"     : "0",
-            "sealed"   : ".1"
+            "platform" : 0,
+            "none"     : 0.9,
+            "full"     : 0,
+            "sealed"   : 0.1
         },
-        "symmetry"    : {
-            "none"    : ".1",
-            "full"    : ".8",
-            "partial" : ".1"
+        "symmetry" : {
+            "none"    : 0.1,
+            "full"    : 0.8,
+            "partial" : 0.1
         },
         "accel" : "1 10 .5 .5",
         "turn"  : "5 10",

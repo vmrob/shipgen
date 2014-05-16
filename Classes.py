@@ -521,7 +521,7 @@ def init():
 	Rooms.init()
 	for (shipType, typeAbbr) in TYPE_ABBRS.items():
 		classes[shipType] = {}
-		configDict = ConfigFile.read_config("classes_%s.json" % typeAbbr)
-		for className in configDict.keys():
-			classes[shipType][className] = ShipClass(shipType, configDict[className])
+		classDict = ConfigFile.read_config("classes_%s.json" % typeAbbr)
+		for k in classDict.keys():
+			classes[shipType][k] = ShipClass(shipType, classDict[k])
 	initialized = True

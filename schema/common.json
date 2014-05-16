@@ -1,0 +1,103 @@
+{
+    "definitions" : {
+        "probability" : {
+            "type" : "number",
+            "minimum" : 0,
+            "maximum" : 1
+        },
+        "materials" : {
+            "type" : "object",
+            "properties" : {
+                "Interior Wall" : { "$ref" : "#/definitions/probability" },
+                "Light Armor"   : { "$ref" : "#/definitions/probability" },
+                "Heavy Armor"   : { "$ref" : "#/definitions/probability" }
+            },
+            "additionalProperties": false,
+            "minProperties" : 1
+        },
+        "enclosure" : {
+            "type" : "object",
+            "properties" : {
+                "platform" : { "$ref" : "#/definitions/probability" },
+                "none"     : { "$ref" : "#/definitions/probability" },
+                "full"     : { "$ref" : "#/definitions/probability" },
+                "sealed"   : { "$ref" : "#/definitions/probability" }
+            },
+            "additionalProperties": false,
+            "minProperties" : 1
+        },
+        "symmetry" : {
+            "type" : "object",
+            "properties" : {
+                "none"      : { "$ref" : "#/definitions/probability" },
+                "full"      : { "$ref" : "#/definitions/probability" },
+                "partial"   : { "$ref" : "#/definitions/probability" }
+            },
+            "additionalProperties": false,
+            "minProperties" : 1
+        }
+    },
+    "basic-structure" : {
+        "type"       : "object",
+        "properties" : {
+            "materials" : { "$ref" : "#definitions/materials" },
+            "enclosure" : { "$ref" : "#definitions/enclosure" },
+            "parts" : {
+                "type" : "object",
+                "patternProperties" : {
+                    ".*" : { "type" : "string" }
+                },
+                "minProperties" : 1
+            }
+        },
+        "required" : ["materials", "enclosure", "parts"]
+    },
+    "basic-ship-station" : {
+        "allOf" : [
+            { "$ref" : "#/basic-structure" },
+            {
+                "type"       : "object",
+                "properties" : {
+                    "symmetry"  : { "$ref" : "#definitions/symmetry" }
+                },
+                "required" : ["symmetry"]
+            }
+        ]
+    },
+    "basic-ship" : {
+        "allOf" : [
+            { "$ref" : "#/basic-ship-station" },
+            {
+                "type"       : "object",
+                "properties" : {
+                    "accel" : { "type" : "string" },
+                    "turn"  : { "type" : "string" },
+                    "power" : {
+                        "type" : "object",
+                        "patternProperties" : {
+                            ".*" : { "$ref" : "#/definitions/probability" }
+                        },
+                        "minProperties" : 1
+                    }
+                },
+                "required" : ["accel", "turn", "power"]
+            }
+        ]
+    },
+    "basic-part" : {
+        "type" : "object",
+        "properties" : {
+            "mass"  : { "type" : "number" },
+            "power" : { "type" : "number" },
+            "size"  : { "type" : "string" },
+            "rooms" : {
+                "type" : "object",
+                "patternProperties" : {
+                    ".*" : { "$ref" : "#/definitions/probability" }
+                },
+                "minProperties" : 1
+            },
+            "required" : ["rooms"]
+        }
+    }
+}

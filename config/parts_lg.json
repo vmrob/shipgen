@@ -2,24 +2,24 @@
 
 {
     "Beacon" : {
-        "mass"  : "1",
-        "power" : "1",
+        "mass"  : 1,
+        "power" : 1,
         "size"  : "1 1 2",
         "rooms" : {
-            "Hidden Room" : ".9",
-            "Exterior"    : ".1"
+            "Hidden Room" : 0.9,
+            "Exterior"    : 0.1
         }
     },
     "Medical Room" : {
-        "mass"  : "1",
-        "power" : "1",
+        "mass"  : 1,
+        "power" : 1,
         "size"  : "2 2 1",
         #attachment points
         #access requirements
         "rooms" : {
-            "Medbay"           : ".4",
-            "Officer Quarters" : ".3",
-            "Crew Quarters"    : ".3"
+            "Medbay"           : 0.4,
+            "Officer Quarters" : 0.3,
+            "Crew Quarters"    : 0.3
         }
     }
 }

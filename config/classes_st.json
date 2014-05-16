@@ -3,19 +3,19 @@
 {
     "Spawn Base" : {
         "materials" : {
-            "Interior Wall" : ".2",
-            "Light Armor"   : ".7",
-            "Heavy Armor"   : ".1"
+            "Interior Wall" : 0.2,
+            "Light Armor"   : 0.7,
+            "Heavy Armor"   : 0.1
         },
         "enclosure" : {
-            "platform" : ".8",
-            "none"     : "0",
-            "full"     : ".2"
+            "platform" : 0.8,
+            "none"     : 0,
+            "full"     : 0.2
         },
         "symmetry" : {
-            "none"    : ".9",
-            "full"    : ".01",
-            "partial" : ".09"
+            "none"    : 0.9,
+            "full"    : 0.01,
+            "partial" : 0.09
         },
         "parts" : {
             "Medical Room" : "Mandatory"

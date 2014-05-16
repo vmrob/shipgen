@@ -1,0 +1,10 @@
+{
+    "$schema"    : "http://json-schema.org/draft-04/schema#",
+    "title"      : "Large Ship Classes",
+    "type"       : "object",
+    "patternProperties" : {
+        ".*" : {
+            "$ref" : "common.json#/basic-ship"
+        }
+    }   
+}

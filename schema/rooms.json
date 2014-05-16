@@ -1,0 +1,19 @@
+{
+    "$schema"    : "http://json-schema.org/draft-04/schema#",
+    "title"      : "Rooms",
+    "type"       : "object",
+    "patternProperties" : {
+        ".*" : {
+            "allOf" : [
+                { "$ref" : "common.json#/basic-structure" },
+                {
+                    "type" : "object",
+                    "properties" : {
+                        "windows"   : { "type" : "integer" },
+                        "door"      : { "type" : "integer" }
+                    }
+                }
+            ]
+        }
+    }
+}
