@@ -1,0 +1,13 @@
+{
+    "$schema"    : "http://json-schema.org/draft-04/schema#",
+    "title"      : "Small Ship Classes",
+    "type"       : "object",
+    "patternProperties" : {
+        ".*" : {
+            "type" : "object",
+            "extends" : {
+                "$ref" : "common.json#/basic-ship"
+            }
+        }
+    }
+}

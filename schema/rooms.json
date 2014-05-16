@@ -1,0 +1,23 @@
+{
+    "$schema"    : "http://json-schema.org/draft-04/schema#",
+    "title"      : "Rooms",
+    "type"       : "object",
+    "patternProperties" : {
+        ".*" : {
+            "type" : "object",
+            "properties" : {
+                "materials" : { "$ref" : "common.json#/definitions/materials" },
+                "enclosure" : { "$ref" : "common.json#/definitions/enclosure" },
+                "windows"   : { "type" : "integer" },
+                "door"      : { "type" : "integer" },
+                "parts" : {
+                    "type" : "object",
+                    "patternProperties" : {
+                        ".*" : { "type" : "string" }
+                    },
+                    "minProperties" : 1
+                }
+            }
+        }
+    }
+}

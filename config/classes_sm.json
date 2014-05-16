@@ -12,7 +12,7 @@
             "full"     : "0",
             "sealed"   : ".1"
         },
-        "symmetry"    : {
+        "symmetry" : {
             "none"    : ".1",
             "full"    : ".8",
             "partial" : ".1"
